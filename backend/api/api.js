@@ -3,14 +3,19 @@ const router = express.Router();
 const db = require('../bd/conexionbd');
 
 router.post('/InsertarCuentaPersona', (req, res) => {
-  const { usuario, contrasenia, telefono, rut, nombre, apellido } = req.body;
-  db.query('CALL InsertarCuentaPersona(?, ?, ?, ?, ?, ?)', [usuario, contrasenia, telefono, rut, nombre, apellido], (err, results) => {
+  const { usuario, password, telefono, rut, dv, nombre, apellido } = req.body;
+  db.query('CALL InsertarCuentaPersona(?, ?, ?, ?, ?, ?, ?)', [usuario, password, telefono, rut, dv, nombre, apellido], (err, results) => {
     if (err) {
       console.error('Error al insertar datos:', err);
       res.status(500).json({ error: 'Error al insertar datos.' });
     } else {
-      console.log('Datos insertados correctamente');
-      res.status(200).json({ message: 'Datos insertados correctamente' });
+      const resultado = results[0][0];
+      if (resultado && resultado.respuesta === 1) {
+        console.log('Cuenta registrada correctamente');
+        res.status(200).json({ message: 'Cuenta registrada correctamente' });
+      } else {
+        res.status(401).json({ error: 'Persona ya se encuentra registrada!' });
+      }
     }
   });
 });
