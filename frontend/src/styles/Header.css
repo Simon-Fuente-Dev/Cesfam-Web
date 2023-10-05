@@ -1,0 +1,45 @@
+/* Header de la pagina */
+header {
+    background-color: var(--cyan-A);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+.logo {
+    position: relative;
+    right: -20px;
+    top: 60px;
+    width: 450px;
+    cursor: pointer;
+}
+
+header a {
+    text-decoration: none;
+    color: azure;
+    font-size: 25px;
+
+}
+
+.info-pag {
+    text-align: center;
+    padding-left: 30px;
+}
+
+.login {
+    display: flex;
+    align-items: center;
+}
+.login a {
+    margin-top: 5px;
+}
+.login img {
+    position: relative;
+    top: 5px;
+    right: 50px;
+    height: 100px;
+    color: aliceblue;
+    cursor: pointer;
+}

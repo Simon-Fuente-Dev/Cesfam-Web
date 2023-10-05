@@ -1,0 +1,30 @@
+/* Footer */
+footer {
+    background-color: var(--cyan-A);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    padding-inline: 50px 10%;
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 35px;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10em;
+}
+
+.logo-container img {
+    width: 60px;
+}
+
+.oculto {
+    visibility: hidden;
+}
