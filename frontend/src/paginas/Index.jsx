@@ -1,23 +1,54 @@
 
 import '../styles/index.css';
 import evento from '../assets/img/evento.png';
+import evento2 from '../assets/img/evento_2.png';
 import iconoAgendar from '../assets/img/iconoAgendar.png';
 import iconoReceta from '../assets/img/iconoReceta.png';
+import { Link } from 'react-router-dom'
 
 function Index() {
   return (
     <>
       <main>
-        <event-section>
-          <h2>Proximos Eventos y Talleres!</h2>
-          <a href="evento.html">
-            <img src={evento} alt="" />
-          </a>
-        </event-section>
+        <carrousel>
+          <h2 id='title'>Proximos Eventos y Talleres!</h2>
+          <div id="carouselExampleCaptions" className="carousel">
+            <div className="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            </div>
+            <div className="carousel-inner">
+              <div className="carousel-item active">
+                <Link to="/Eventos">
+                  <img src={evento} className="d-block" alt="..." />
+                </Link>
+                <div className="carousel-caption d-none d-md-block">
+                  <h5>Evento de baile de abuelitos</h5>
+                  <p>Presione la imagen para incribirse al evento</p>
+                </div>
+              </div>
+              <div className="carousel-item">
+                <img src={evento2} className="d-block " alt="..." />
+                <div className="carousel-caption d-none d-md-block">
+                  <h5>Second slide label</h5>
+                  <p>Some representative placeholder content for the second slide.</p>
+                </div>
+              </div>
+            </div>
+            <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span className="carousel-control-next-icon" aria-hidden="true"></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+        </carrousel>
 
         {/* Seccion de los servicios de la pagina */}
         <section-services>
-          <h2>Nuestros Servicios</h2>
+          <h2 id='title'>Nuestros Servicios</h2>
           <div className="services">
             <a className="service-card">
               <div className="service-info">
