@@ -1,0 +1,11 @@
+-Crear el proyecto
+npm create vite@latest
+
+-echar a andar la pagina
+npm run dev
+
+---INSTALACION DE PAQUETES!
+npm i react-router-dom: Sirve para el manejo de rutas
+npm i bootstrap
+npm i react-bootstrap: bootstrap
+npm i axios
