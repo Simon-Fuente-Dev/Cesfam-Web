@@ -4,6 +4,7 @@ import Index from './paginas/Index.jsx'
 import Login from './paginas/Login.jsx'
 import Registrar from './paginas/Registrar.jsx'
 import Eventos from './paginas/Eventos.jsx'
+import Area from './paginas/Area.jsx'
 function App() {
     return (
         <BrowserRouter>
@@ -14,6 +15,7 @@ function App() {
                     <Route path='login' element={<Login />} />
                     <Route path='Registrar' element={<Registrar />} />
                     <Route path='Eventos' element={<Eventos />} />
+                    <Route path='Area' element={<Area />} />
                 </Route>
             </Routes>
         </BrowserRouter>

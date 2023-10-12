@@ -5,7 +5,7 @@ import { Alert } from 'react-bootstrap';
 import { Link, useNavigate } from 'react-router-dom';
 
 const Registrar = () => {
-  const [rut, setRut] = useState('');
+  const [rut, setRut] = useState(0);
   const [dv, setDv] = useState('');
   const [usuario, setUsuario] = useState('');
   const [nombre, setNombre] = useState('');
@@ -134,7 +134,7 @@ const Registrar = () => {
             id='apellido'
             value={apellido}
             onChange={(e) => setApellido(e.target.value)} />
-          <p>Telefono</p>
+          <p>Correo Electronico</p>
           <input type="text"
             id='telefono'
             value={telefono}

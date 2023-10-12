@@ -20,7 +20,7 @@ function Index() {
             <div className="carousel-inner">
               <div className="carousel-item active">
                 <Link to="/Eventos">
-                  <img src={evento} className="d-block" alt="..." />
+                  <img src="https://www.plaqueservicios.com/wp-content/uploads/2019/09/deporte1.jpg"className="d-block" alt="..." />
                 </Link>
                 <div className="carousel-caption d-none d-md-block">
                   <h5>Evento de baile de abuelitos</h5>
@@ -50,12 +50,12 @@ function Index() {
         <section-services>
           <h2 id='title'>Nuestros Servicios</h2>
           <div className="services">
-            <a className="service-card">
+            <Link to={'/Area'} className="service-card">
               <div className="service-info">
                 <img src={iconoAgendar} alt="" />
                 <p>Agendar Hora</p>
               </div>
-            </a>
+            </Link>
 
             <a className="service-card">
               <div className="service-info">

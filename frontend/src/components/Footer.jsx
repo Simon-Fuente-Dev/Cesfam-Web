@@ -5,7 +5,10 @@ import logoTwitt from '../assets/img/logoTwitter.png';
 const Footer = () => {
     return (
         <footer>
-            <p>Siguenos en nuestras redes sociales!</p>
+            <div className="textFooter">
+                <p>Siguenos en nuestras redes sociales!</p>
+            </div>
+
             <div className="logo-container">
                 <img src={logoFace} alt="" />
                 <img src={logoInsta} alt="" />

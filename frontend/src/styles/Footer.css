@@ -10,8 +10,16 @@ footer {
     margin-top: auto;
 }
 
-footer p {
+.textFooter p {
+    margin-top: 20px;
     font-size: 35px;
+}
+
+.textFooter {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center; /* Centra verticalmente */
+    text-align: center;
 }
 
 .logo-container {

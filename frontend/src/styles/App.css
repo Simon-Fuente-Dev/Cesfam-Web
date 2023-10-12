@@ -1,123 +1,30 @@
-main {
-    flex-grow: 1;
-    padding: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+:root {
+    --cyan-A: #229AB5;
+    --cyan-B: #166475;
+    --cyan-C: #2FD0F5;
+    --cyan-D: #0A2E36;
+    --cyan-E: #2ABBDB;
+    --gray : #848484;
 }
 
-/* seccion de eventos y talleres */
-#title{
-    font-size: 2.5em;
-    text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+p,
+a {
+    place-items: center;
     font-weight: bolder;
-    margin-bottom: 100px;
-}
-carrousel {
-  display: grid;
-  place-items: center;
-  margin-top: 150px;
-  margin-bottom: 200px;
-}
-
-
-.carousel-item img {
-  width: 1000px;
-  height: 600px;
-}
-
-/* Seccion de servicios */
-
-section-services h2 {
-    margin-block: 1.5em;
-}
-
-.services {
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr;
-    gap: 3em;
-}
-
-@media screen and (min-width: 1100px) {
-    .services {
-        grid-template-columns: 1fr 1fr;
-        gap: 0;
-    }
-}
-
-.service-card {
-    background-color: var(--cyan-D);
-    width: 22em;
-    border-radius: 10%;
-    height: 24em;
-    cursor: pointer;
-    text-decoration: none;
-}
-
-.service-card:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
-}
-  
-.service-info {
-    display: grid;
-    place-items: center;
-    margin-block: 3em;
-}
-.service-info img {
-    width: 10.5em;
-    cursor: pointer;
-}
-
-.service-info p {
-    margin-block-start: 2em;
-    font-size: 35px;
-    cursor: pointer;
-}
-
-/* Seccion informacion */
-section-info {
-    display: grid;
-    place-items: center;
-    margin-top: 200px;
-    margin-bottom: 7em;
-}
-
-.ubication {
-    text-align: center;
-    /* margin-bottom: 10px; */
-}
-
-.mapa {
-    margin-top: 20px;
-    width: 450px;
-    height: 300px;
-    margin-left: 40px;
-}
-
-.cesfam-info {
-    background-color: var(--cyan-B);
-    width: 980px;
-    height: 480px;
-    display: grid;
-    place-items: center;
-    grid-template-columns: 1fr 1fr;
-}
-
-.cesfam-info h3 {
-    font-size: 30px;
+    font-size: larger;
     color: azure;
 }
 
-.contact ul {
-    list-style: none;
-    /* margin-bottom: 100px; */
 
-}
-.contact li{
-    color: azure;
-    font-size: 20px;
-    margin-top: 34px;
-}
 
-.horario {
-    text-align: center;
-}
+
+
