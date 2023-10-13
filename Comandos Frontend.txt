@@ -9,3 +9,4 @@ npm i react-router-dom: Sirve para el manejo de rutas
 npm i bootstrap
 npm i react-bootstrap: bootstrap
 npm i axios
+npm i sweetalert

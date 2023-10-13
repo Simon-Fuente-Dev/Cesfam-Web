@@ -10,6 +10,26 @@ function Index() {
   return (
     <>
       <main>
+        {/* Seccion de los servicios de la pagina */}
+        <section-services>
+          <h2 id='title'>Nuestros Servicios</h2>
+          <div className="services">
+            <Link to={'/Area'} className="service-card">
+              <div className="service-info">
+                <img src={iconoAgendar} alt="" />
+                <p>Agendar Hora</p>
+              </div>
+            </Link>
+
+            <a className="service-card">
+              <div className="service-info">
+                <img src={iconoReceta} alt="" />
+                <p>Ver Receta Medica</p>
+              </div>
+            </a>
+          </div>
+        </section-services>
+
         <carrousel>
           <h2 id='title'>Proximos Eventos y Talleres!</h2>
           <div id="carouselExampleCaptions" className="carousel">
@@ -45,26 +65,6 @@ function Index() {
             </button>
           </div>
         </carrousel>
-
-        {/* Seccion de los servicios de la pagina */}
-        <section-services>
-          <h2 id='title'>Nuestros Servicios</h2>
-          <div className="services">
-            <Link to={'/Area'} className="service-card">
-              <div className="service-info">
-                <img src={iconoAgendar} alt="" />
-                <p>Agendar Hora</p>
-              </div>
-            </Link>
-
-            <a className="service-card">
-              <div className="service-info">
-                <img src={iconoReceta} alt="" />
-                <p>Ver Receta Medica</p>
-              </div>
-            </a>
-          </div>
-        </section-services>
 
         <section-info>
           <div className="cesfam-info">
