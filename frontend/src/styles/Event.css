@@ -42,13 +42,14 @@ event-info p {
     font-weight: bolder;
     margin-top: 20px;
     margin-bottom: 30px;
-    border: 4px solid black;
+    border: 4px solid var(--cyan-B);
     border-radius: 10%;
+    cursor: pointer;
 }
 
 .form-event button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 2rem rgba(0, 0, 0, .25);
+    box-shadow: 0 0 1rem var(--cyan-B);
 }
 
 .form-event input {

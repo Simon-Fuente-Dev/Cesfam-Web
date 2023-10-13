@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import AuthLayout from './layout/AuthLayout.jsx'
-import Index from './paginas/Index.jsx'
-import Login from './paginas/Login.jsx'
-import Registrar from './paginas/Registrar.jsx'
-import Eventos from './paginas/Eventos.jsx'
-import Area from './paginas/Area.jsx'
+import Index from './pages/Index.jsx'
+import Login from './pages/Login.jsx'
+import Registrar from './pages/Registrar.jsx'
+import Eventos from './pages/Eventos.jsx'
+import Area from './pages/Area.jsx'
+import Hora from './pages/Hora.jsx'
 function App() {
     return (
         <BrowserRouter>
@@ -16,6 +17,7 @@ function App() {
                     <Route path='Registrar' element={<Registrar />} />
                     <Route path='Eventos' element={<Eventos />} />
                     <Route path='Area' element={<Area />} />
+                    <Route path='Hora' element={<Hora />} />
                 </Route>
             </Routes>
         </BrowserRouter>

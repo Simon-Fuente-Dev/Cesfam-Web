@@ -9,8 +9,7 @@ section-area {
     width: 70%;
     display: grid;
     place-items: center;
-    background-color: white;
-    border: 4px solid var(--gray);
+    border: 4px solid var(--cyan-D);
 }
 
 .area h1 {
@@ -22,17 +21,21 @@ section-area {
     height: auto;
     font-size: 20px;
     padding-block: 10px;
-    border: 2.5px solid var(--cyan-B);
+    border: 2.8px solid var(--cyan-B);
 }
 
 .area button {
-    background-color: var(--cyan-B);
+    background-color: var(--cyan-A);
     color: white;
-    margin-block: 60px;
+    width: 150px;
+    height: 60px;
     font-size: 20px;
-    padding-inline: 20px;
-    padding-block: 10px;
-    border: 5px solid var(--cyan-B);
+    font-weight: bolder;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    border: 4px solid var(--cyan-B);
+    border-radius: 10%;
+    cursor: pointer;
 }
 
 .area button:hover {

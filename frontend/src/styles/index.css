@@ -111,6 +111,7 @@ section-info {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
 }
 
 .cesfam-info h3 {

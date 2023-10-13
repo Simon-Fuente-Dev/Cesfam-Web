@@ -1,0 +1,27 @@
+section-hora {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    margin-block: 120px;
+}
+
+.agendar {
+    border: 4px solid var(--cyan-D);
+    width: 95%;
+    display: grid;
+    place-items: center;
+}
+
+.especialista, .fecha {
+    margin-block: 40px;
+    width: 80%;
+}
+
+.especialista select, .fecha select {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    padding-block: 10px;
+    border: 3.5px solid var(--cyan-B);
+}
