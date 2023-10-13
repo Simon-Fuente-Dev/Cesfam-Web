@@ -2,7 +2,7 @@ section-hora {
     width: 100%;
     display: grid;
     place-items: center;
-    margin-block: 120px;
+    margin-block: 180px;
 }
 
 .agendar {
