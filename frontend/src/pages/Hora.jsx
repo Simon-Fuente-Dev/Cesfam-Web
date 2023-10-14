@@ -8,20 +8,45 @@ const Hora = () => {
   const [especialista, setEspecialista] = useState('');
   const [fecha, setFecha] = useState('');
   const [hora, setHora] = useState('');
+  const [habilitado, setHabilitado] = useState(true);
+
+  const selectEspecialista = e => {
+    e.preventDefault();
+    const especialistaSeleccionado = e.target.value;
+
+    setEspecialista(especialistaSeleccionado);
+    
+    if (especialistaSeleccionado === "") {
+      MySwal.fire({
+        title: "Debe seleccionar un especialista",
+        icon: "error"
+      });
+      setHabilitado(true);
+      setFecha("")
+    } else {
+      // Deshabilitar el select de fecha si se selecciona un especialista
+      setHabilitado(false);
+    }
+  }
+
 
   const seleccionarHora = e => {
     e.preventDefault();
     const horaSeleccionada = e.currentTarget.getAttribute("data-value");
 
     MySwal.fire({
-      title: `¿ Desea seleccionar la hora de ${horaSeleccionada} ?`,
+      title: `¿ Desea agendar la hora de las ${horaSeleccionada} ?`,
       icon: "question",
       showCancelButton: true,
       confirmButtonText: "Sí",
       cancelButtonText: "No",
     }).then((result) => {
       if (result.isConfirmed) {
-        setHora(horaSeleccionada);
+        MySwal.fire({
+          title: "Hora agendada con exito!",
+          text: "Revise su correo con los detalles de la hora",
+          icon: "success"
+        })
       }
     });
   }
@@ -33,7 +58,7 @@ const Hora = () => {
           <h2>Seleccione un especialista con el que desee atenderse</h2>
           <select
             value={especialista}
-            onChange={(e) => setEspecialista(e.target.value)}>
+            onChange={selectEspecialista}>
             <option value="">Seleccione un Especialista..</option>
             <option value="Ricardo">Ricardo Perez</option>
             <option value="Juan">Juan Carlos Bodoque</option>
@@ -42,6 +67,7 @@ const Hora = () => {
         <div className="fecha">
           <h2>Elija una fecha para su hora</h2>
           <select
+            disabled={habilitado}
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}>
             <option value="">Seleccione una fecha..</option>

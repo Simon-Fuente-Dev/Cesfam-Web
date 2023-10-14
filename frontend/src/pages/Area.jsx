@@ -1,6 +1,9 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import swal from 'sweetalert';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+const MySwal = withReactContent(Swal);
 
 const Area = () => {
     const [area, setArea] = useState('');
@@ -10,7 +13,7 @@ const Area = () => {
         e.preventDefault();
 
         if ( area == '') {
-            swal({
+            MySwal.fire({
                 title: "Debe seleccionar un area",
                 icon: "error",
                 button: "Aceptar"
