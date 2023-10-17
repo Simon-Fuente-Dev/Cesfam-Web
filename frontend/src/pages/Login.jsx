@@ -38,7 +38,7 @@ const Login = () => {
     }
   };
   return (
-    <section-login>
+    <section className='section-login'>
       <form-login>
         <h1>Iniciar Sesion</h1>
         <form id='login-container' onSubmit={handleSubmit}>
@@ -71,7 +71,7 @@ const Login = () => {
           <p>No tienes una cuenta? <Link to="/registrar">Registrate</Link></p>
         </nav>
       </form-login>
-    </section-login>
+    </section>
   )
 }
 

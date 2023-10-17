@@ -1,9 +1,7 @@
-section-area {
+.section-area {
     width: 100%;
     display: grid;
     place-items: center;
-    margin-top: 180px;
-    margin-bottom: 200px;
 }
 
 .area {

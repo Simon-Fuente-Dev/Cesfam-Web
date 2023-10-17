@@ -29,7 +29,7 @@ const Area = () => {
     }
 
     return (
-        <section-area>
+        <section className='section-area'>
             <form className="area" onSubmit={handleSubmit}>
                 <h1>Seleccione un area para su consulta</h1>
                 <select
@@ -44,7 +44,7 @@ const Area = () => {
                 <button type='submit' >Siguiente</button>
             </form>
             
-        </section-area>
+        </section>
     )
 }
 

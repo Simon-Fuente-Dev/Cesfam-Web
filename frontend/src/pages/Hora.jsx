@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import emailjs from 'emailjs-com'
 
 const MySwal = withReactContent(Swal);
 
@@ -41,18 +42,35 @@ const Hora = () => {
       confirmButtonText: "Sí",
       cancelButtonText: "No",
     }).then((result) => {
+
       if (result.isConfirmed) {
         MySwal.fire({
           title: "Hora agendada con exito!",
           text: "Revise su correo con los detalles de la hora",
           icon: "success"
         })
+        emailjs.send("service_9caz3ty", "template_mvs6qqb", {
+          nom_paciente: "simon",
+          area: "kinesiologia",
+          dia_hora: fecha,
+          hora: horaSeleccionada,
+          nom_especialista: especialista,
+          user_email: "simon.delafuente18@gmail.com",
+        }, 'WwGBoBptRIgG3dTmU')
+          .then((response) => {
+            // Éxito: el correo se envió correctamente
+            console.log("Correo enviado con éxito", response);
+          })
+          .catch((error) => {
+            // Error: manejar el error aquí
+            console.error("Error al enviar el correo", error);
+          });
       }
     });
   }
 
   return (
-    <section-hora>
+    <section className="section-hora">
       <div className="agendar">
         <div className="especialista">
           <h2>Seleccione un especialista con el que desee atenderse</h2>
@@ -71,12 +89,12 @@ const Hora = () => {
             value={fecha}
             onChange={(e) => setFecha(e.target.value)}>
             <option value="">Seleccione una fecha..</option>
-            <option value="Ricardo">15/12/2023</option>
-            <option value="Juan">16/12/2023</option>
+            <option value="15/12">15/12</option>
+            <option value="16/12">16/12</option>
           </select>
         </div>
         <div className="hora">
-          <h2>Elija una hora</h2>
+          <h2>Elija una hora para agendar</h2>
           <div className="horas">
             {/* Aqui hay que hacer un select de las horas disponibles segun el especialista y la fecha que se ponen arriba */}
             <div className="hora-card"
@@ -109,11 +127,10 @@ const Hora = () => {
               data-value="10:30">
               <p>10:30</p>
             </div>
-            
           </div>
         </div>
       </div>
-    </section-hora>
+    </section>
   )
 }
 

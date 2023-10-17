@@ -3,7 +3,7 @@ import evento from '../assets/img/evento.png';
 
 const Eventos = () => {
   return (
-    <event-section>
+    <event className = 'event-section'>
       <event-info>
         <h1>Taller de salsa y cueca para todas las edades!</h1>
         <img src={evento} alt="" />
@@ -13,7 +13,7 @@ const Eventos = () => {
             <button>Inscribirse!</button>
         </form>
       </event-info>
-    </event-section>
+    </event>
 
   )
 }

@@ -1,4 +1,4 @@
-event-section {
+.event-section {
     display: grid;
     place-items: center;
 }

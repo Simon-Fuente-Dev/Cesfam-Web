@@ -87,7 +87,7 @@ const Registrar = () => {
   };
 
   return (
-    <section-login>
+    <section className='section-login'>
       <form-login>
         <h1>Registrarse</h1>
         {registroExitoso && (
@@ -160,7 +160,7 @@ const Registrar = () => {
           <p>Ya tienes una cuenta? <Link to='/login'>Inicia Sesion!</Link></p>
         </nav>
       </form-login>
-    </section-login>
+    </section>
   )
 }
 
