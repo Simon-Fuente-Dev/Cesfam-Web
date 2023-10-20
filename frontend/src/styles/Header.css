@@ -8,37 +8,37 @@ header {
     width: 100%;
 }
 
+.info-pag {
+    margin-top: 20px;
+    text-align: center;
+    margin-left: 30px;
+    width: 27%;
+}
+
+.logo-cesfam{
+    width: 45%;
+    display: grid;
+    place-items: center;
+}
 .logo {
     position: relative;
-    right: -20px;
-    top: 60px;
+    top: 50px;
     width: 450px;
     cursor: pointer;
 }
 
-header a {
+.login {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 150px;
+    gap: 40px;
+}
+.login-text {
     text-decoration: none;
     color: azure;
-    font-size: 25px;
-}
-
-.info-pag {
-    margin-top: 20px;
-    text-align: center;
-    padding-left: 30px;
-}
-
-.login {
-    display: flex;
+    font-size: 20px;
+    display: flex; /* Aplicar flexbox al texto */
     align-items: center;
-}
-.login a {
-    margin-top: 5px;
-}
-.login img {
-    position: relative;
-    right: 50px;
-    height: 100px;
-    color: aliceblue;
-    cursor: pointer;
 }
