@@ -7,6 +7,7 @@ npm run dev
 ---INSTALACION DE PAQUETES!
 npm i react-router-dom: Sirve para el manejo de rutas
 npm i bootstrap
-npm i react-bootstrap: bootstrap
+npm i react-bootstrap: 
 npm i axios
-npm i sweetalert
+npm i sweetalert2
+npm i emailjs-com

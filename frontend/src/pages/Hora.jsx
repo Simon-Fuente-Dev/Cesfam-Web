@@ -49,13 +49,16 @@ const Hora = () => {
           text: "Revise su correo con los detalles de la hora",
           icon: "success"
         })
+        //Llamar funcion que recarga las horas
+        
+        // Aqui va procedimiento de insercion
         emailjs.send("service_9caz3ty", "template_mvs6qqb", {
           nom_paciente: "simon",
           area: "kinesiologia",
           dia_hora: fecha,
           hora: horaSeleccionada,
           nom_especialista: especialista,
-          user_email: "simon.delafuente18@gmail.com",
+          user_email: "simon.soloskate@gmail.com",
         }, 'WwGBoBptRIgG3dTmU')
           .then((response) => {
             // Éxito: el correo se envió correctamente
@@ -121,6 +124,21 @@ const Hora = () => {
               onClick={seleccionarHora}
               data-value="10:00">
               <p>10:00</p>
+            </div>
+            <div className="hora-card"
+              onClick={seleccionarHora}
+              data-value="10:30">
+              <p>10:30</p>
+            </div>
+            <div className="hora-card"
+              onClick={seleccionarHora}
+              data-value="10:30">
+              <p>10:30</p>
+            </div>
+            <div className="hora-card"
+              onClick={seleccionarHora}
+              data-value="10:30">
+              <p>10:30</p>
             </div>
             <div className="hora-card"
               onClick={seleccionarHora}
