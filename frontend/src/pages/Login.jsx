@@ -1,15 +1,21 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Alert } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import { useAuth } from '../layout/AuthContext.jsx';
 
 const Login = () => {
   const [rut, setRut] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [exito, setExito] = useState(false);
+  const navigate = useNavigate();
+  const { login, currentUser } = useAuth();
+
+  if (currentUser) {
+    navigate('/');
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,25 +24,35 @@ const Login = () => {
       return;
     }
     try {
-      const response = await axios.post('http://localhost:3001/api/ValidarLogin', {
-        rut,
-        password,
-      });
+      const userResponse = await axios.get(`http://localhost:3001/api/obtenerUsuario/${rut}`);
 
-      if (response.status === 200) {
-        setExito(true);
-        setError('');
-        setTimeout(() => {
-          setExito(false);
-        }, 5000);
+      if (userResponse.status === 200 && userResponse.data.usuario_cuenta) {
+        const response = await axios.post('http://localhost:3001/api/ValidarLogin_web', {
+          p_rut: rut,
+          p_contrasenia: password,
+        });
+
+        if (response.status === 200 && response.data.id_cuenta) {
+         
+          const idCuenta = response.data.id_cuenta;
+
+          login({ id_cuenta: idCuenta, token: response.data.token, userName: userResponse.data.usuario_cuenta });
+          setExito(true);
+          setError('');
+          navigate('/');
+        } else {
+          setError('Credenciales inválidas');
+        }
       } else {
-        setError('Credenciales inválidas');
+        setError('No se encontró un usuario con ese rut');
       }
     } catch (error) {
       console.error('Error en la llamada a la API:', error);
       setError('Error al iniciar sesión. Verifica tus credenciales.');
     }
   };
+
+  
   return (
     <section className='section-login'>
       <form-login>

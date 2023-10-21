@@ -1,32 +1,36 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Alert } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
+import { useAuth } from '../layout/AuthContext';
 
 const Registrar = () => {
-  const [rut, setRut] = useState(0);
+  const [rut, setRut] = useState('');
   const [dv, setDv] = useState('');
   const [usuario, setUsuario] = useState('');
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
-  const [telefono, setTelefono] = useState('');
+  const [correo, setCorreo] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPass, setConfirmPass] = useState('');
   const [registroExitoso, setRegistroExitoso] = useState(false);
   const [error, setError] = useState('');
   const [camposFaltantes, setCamposFaltantes] = useState([]);
-
   const navigate = useNavigate();
+  const { currentUser } = useAuth();
 
-  const handleSubmit = async e => {
+  if (currentUser) {
+    navigate('/');
+  }
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const camposRequeridos = ['rut', 'dv', 'nombre', 'apellido', 'telefono', 'usuario', 'password', 'confirmPass'];
+    const camposRequeridos = ['rut', 'dv', 'nombre', 'apellido', 'usuario', 'password', 'confirmPass', 'correo'];
     const camposFaltantes = [];
 
     camposRequeridos.forEach((campo) => {
-      if (!eval(campo)) {
+      if (!eval(campo) && campo !== 'confirmPass') {
         camposFaltantes.push(campo);
       }
     });
@@ -38,44 +42,43 @@ const Registrar = () => {
     }
 
     if (password !== confirmPass) {
-      setError('Las contraseñas deben coincidir');
+      setError('Las contraseñas no coinciden');
+     
+      setCamposFaltantes([]);
       return;
-    };
+    }
     try {
-      const response = await axios.post('http://localhost:3001/api/InsertarCuentaPersona', {
-        usuario,
-        password,
-        telefono,
-        rut,
-        dv,
-        nombre,
-        apellido
+      const response = await axios.post('http://localhost:3001/api/InsertarCuentaPersona_web', {
+        p_usuario: usuario,
+        p_contrasenia: password,
+        p_rut: parseInt(rut, 10),
+        p_dv: dv,
+        p_nombre: nombre,
+        p_apellido: apellido,
+        p_correo: correo,
+        p_token: null
       });
 
       if (response.status === 200) {
-        console.log('Registro insertado exitosamente.');
         setRegistroExitoso(true);
         setError('');
         setCamposFaltantes([]);
 
         setUsuario('');
         setPassword('');
-        setConfirmPass('')
-        setTelefono('');
+        setConfirmPass('');
         setRut('');
         setDv('');
         setNombre('');
         setApellido('');
+        setCorreo('');
 
         setTimeout(() => {
           setRegistroExitoso(false);
+          navigate('/login');
         }, 5000);
-
-        // Redireccionar a la pagina de login luego de registrar
-        navigate('/login');
-        
       } else if (response.status === 401) {
-        setError('La cuenta ya se encuentra registrada!');
+        setError('La cuenta ya se encuentra registrada.');
       } else {
         console.error('Error al registrar.');
         setError('Error al registrar.');
@@ -134,11 +137,13 @@ const Registrar = () => {
             id='apellido'
             value={apellido}
             onChange={(e) => setApellido(e.target.value)} />
-          <p>Correo Electronico</p>
-          <input type="text"
-            id='telefono'
-            value={telefono}
-            onChange={(e) => setTelefono(e.target.value)} />
+          <p>Correo</p>
+          <input
+            type="email"
+            id="correo"
+            value={correo}
+            onChange={(e) => setCorreo(e.target.value)}
+          />
           <p>Usuario</p>
           <input type="text"
             id='usuario'
@@ -157,11 +162,11 @@ const Registrar = () => {
           <button className='btn-cesfam' type='submit'>Registrarse</button>
         </form>
         <nav>
-          <p>Ya tienes una cuenta? <Link to='/login'>Inicia Sesion!</Link></p>
+          <p>Ya tienes una cuenta? <Link to='/login'>Inicia Sesión!</Link></p>
         </nav>
       </form-login>
     </section>
-  )
+  );
 }
 
-export default Registrar
+export default Registrar;

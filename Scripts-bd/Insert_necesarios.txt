@@ -1,0 +1,16 @@
+INSERT INTO areas (id_area, descripcion_area)
+VALUES
+(1, 'Administrador'),
+(2, 'Recepcionista'),
+(3, 'Medicina General'),
+(4, 'Usuario cesfam'),
+(33, 'Kinesiología'),
+(333, 'Dermatologia'),
+(3333, 'Urología');
+
+INSERT INTO roles (id_rol, descripcion_rol)
+VALUES
+(1, 'Administrador'),
+(2, 'Especialista'),
+(3, 'Recepcionista'),
+(4, 'Paciente');

@@ -6,21 +6,25 @@ import Registrar from './pages/Registrar.jsx'
 import Eventos from './pages/Eventos.jsx'
 import Area from './pages/Area.jsx'
 import Hora from './pages/Hora.jsx'
+import { AuthProvider } from './layout/AuthContext.jsx'
+
 function App() {
     return (
-        <BrowserRouter>
-            <Routes>
-                {/* Esto sirve para el routing de las paginas y los diseños que estas compartiran */}
-                <Route path='/' element={<AuthLayout />}>
-                    <Route index element={<Index />} />
-                    <Route path='login' element={<Login />} />
-                    <Route path='Registrar' element={<Registrar />} />
-                    <Route path='Eventos' element={<Eventos />} />
-                    <Route path='Area' element={<Area />} />
-                    <Route path='Hora' element={<Hora />} />
-                </Route>
-            </Routes>
-        </BrowserRouter>
+        <AuthProvider>
+            <BrowserRouter>
+                <Routes>
+                    {/* Esto sirve para el routing de las paginas y los diseños que estas compartiran */}
+                    <Route path='/' element={<AuthLayout />}>
+                        <Route index element={<Index />} />
+                        <Route path='login' element={<Login />} />
+                        <Route path='Registrar' element={<Registrar />} />
+                        <Route path="Eventos/:eventoId" element={<Eventos />} />
+                        <Route path='Area' element={<Area />} />
+                        <Route path='Hora' element={<Hora />} />
+                    </Route>
+                </Routes>
+            </BrowserRouter>
+        </AuthProvider>
     )
 }
 
