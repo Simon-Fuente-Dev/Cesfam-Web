@@ -1,7 +1,4 @@
-main {
-    flex-grow: 1;
-    padding: 20px;
-}
+
 
 /* seccion de eventos y talleres */
 #title{
@@ -19,8 +16,7 @@ carrousel {
 }
 
 .carousel {
-    border: 40px solid var(--cyan-B);
-    background-color: var(--cyan-B);
+    border: 20px solid var(--cyan-B);
     border-radius: 10px;
 }
 
@@ -29,12 +25,35 @@ carrousel {
   height: 600px;
 }
 
+.carousel-caption {
+    color: var(--cyan-A);
+    background-color: rgba(35, 101, 119, 0.7);
+}
+
+.carousel-caption h2 {
+
+    font-weight: bold;
+}
+
+.carousel-control-prev-icon {
+    padding: 25px;
+    border-radius: 50%;
+    background-color: var(--cyan-A, 0.7) ;
+}
+
+.carousel-control-next-icon {
+    padding: 25px;
+    border-radius: 50%;
+    background-color: var(--cyan-A, 0.7) ;
+}
+
 /* Seccion de servicios */
 section-services {
     display: grid;
     place-items: center;
 }
 section-services h2 {
+    margin: 0 auto;
     margin-top: 100px;
 }
 
@@ -43,7 +62,7 @@ section-services h2 {
     display: grid;
     place-items: center;
     grid-template-columns: 1fr;
-
+    gap: 100px;
 }
 
 @media screen and (min-width: 1100px) {
@@ -56,8 +75,9 @@ section-services h2 {
 .service-card {
     background-color: var(--cyan-D);
     width: 400px;
+    height: 430px;
     border-radius: 10%;
-
+    gap: 10px;
     cursor: pointer;
     text-decoration: none;
 }
@@ -87,8 +107,8 @@ section-services h2 {
 section-info {
     display: grid;
     place-items: center;
-    margin-top: 200px;
-    margin-bottom: 7em;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .ubication {
@@ -107,7 +127,7 @@ section-info {
     width: 60%;
     height: 500px;
     display: grid;
-    place-items: center;
+    place-items: center; 
     grid-template-columns: 1fr 1fr;
     border-radius: 10px;
 }
@@ -116,6 +136,7 @@ section-info {
     font-size: 35px;
     font-weight: bolder;
     color: azure;
+    text-align: center;
 }
 
 .contact ul {

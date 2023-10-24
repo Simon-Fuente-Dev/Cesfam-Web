@@ -69,13 +69,13 @@ form-login h1 {
 .btn-cesfam {
     background-color: var(--cyan-A);
     color: white;
-    width: 150px;
-    height: 60px;
+    width: 180px;
+    height: 70px;
     font-size: 20px;
     font-weight: bolder;
     margin-top: 20px;
     margin-bottom: 30px;
-    border: 4px solid var(--cyan-B);
+    border: 4px solid var(--cyan-A);
     border-radius: 10%;
     cursor: pointer;
 }

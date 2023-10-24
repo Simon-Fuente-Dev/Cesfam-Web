@@ -53,13 +53,13 @@ const Hora = () => {
         
         // Aqui va procedimiento de insercion
         emailjs.send("service_9caz3ty", "template_mvs6qqb", {
-          nom_paciente: "simon",
+          nom_paciente: "simon" ,
           area: "kinesiologia",
           dia_hora: fecha,
           hora: horaSeleccionada,
           nom_especialista: especialista,
           user_email: "simon.soloskate@gmail.com",
-        }, 'WwGBoBptRIgG3dTmU')
+        }, 'kqxltPzfZim80IcOt')
           .then((response) => {
             // Éxito: el correo se envió correctamente
             console.log("Correo enviado con éxito", response);

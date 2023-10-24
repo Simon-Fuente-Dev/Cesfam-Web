@@ -1,44 +1,62 @@
 /* Header de la pagina */
 header {
     background-color: var(--cyan-A);
+    width: 100%;
+}
+.header {
+    height: 120px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 120px;
-    width: 100%;
+    margin-inline: 30px;
 }
 
 .info-pag {
-    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     text-align: center;
-    margin-left: 30px;
-    width: 27%;
 }
 
-.logo-cesfam{
-    width: 45%;
-    display: grid;
-    place-items: center;
-}
 .logo {
     position: relative;
     top: 50px;
     width: 450px;
     cursor: pointer;
+    margin: 0 auto;
 }
 
 .login {
-    margin-top: 20px;
+    margin-top: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    margin-right: 150px;
     gap: 40px;
 }
 .login-text {
     text-decoration: none;
     color: azure;
-    font-size: 20px;
+    font-size: 23px;
     display: flex; /* Aplicar flexbox al texto */
     align-items: center;
+    margin: 0;
 }
+
+.cerrar-text {
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1150px) {
+    .login {
+        gap: 20px;
+        align-items: flex-end;
+        margin-right: 40px;
+    }
+    
+}
+
+
+@media screen and (max-width: 750px) {
+    
+}
+

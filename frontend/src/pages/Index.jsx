@@ -41,16 +41,16 @@ function Index() {
               </div>
             </Link>
 
-            <a className="service-card">
+            <Link to={'/Receta'} className="service-card">
               <div className="service-info">
                 <img src={iconoReceta} alt="" />
                 <p>Ver Receta Medica</p>
               </div>
-            </a>
+            </Link>
           </div>
         </section-services>
 
-        {/* <carrousel>
+        <carrousel>
           <h2 id='title'>Proximos Eventos y Talleres!</h2>
           <div id="carouselExampleCaptions" className="carousel">
 
@@ -70,10 +70,10 @@ function Index() {
               {eventos.map((evento, index) => (
                 <div className={`carousel-item ${index === 0 ? "active" : ""}`} key={index}>
                   <Link to={`/eventos/${evento.id_evento}`}>
-                    <img src={evento.imagen_evento || evento} className="d-block" alt="Evento" />
+                    <img src={evento.imagen_evento || evento} className="d-block" style={{ transition: '0s' }} alt="Evento" />
                   </Link>
                   <div className="carousel-caption d-none d-md-block">
-                    <h5>{evento.nombre_evento || "no se encuentra"}</h5>
+                    <h2>{evento.nombre_evento || "no se encuentra"}</h2>
                     <p>Presione la imagen para inscribirse al evento</p>
                   </div>
                 </div>
@@ -90,7 +90,7 @@ function Index() {
             </button>
 
           </div>
-        </carrousel> */}
+        </carrousel>
 
         <section-info>
           <div className="cesfam-info">

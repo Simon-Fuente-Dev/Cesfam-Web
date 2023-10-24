@@ -6,6 +6,8 @@ import Registrar from './pages/Registrar.jsx'
 import Eventos from './pages/Eventos.jsx'
 import Area from './pages/Area.jsx'
 import Hora from './pages/Hora.jsx'
+import Receta from './pages/Receta.jsx'
+import Detalle from './pages/DetalleReceta.jsx'
 import { AuthProvider } from './layout/AuthContext.jsx'
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
                         <Route path="Eventos/:eventoId" element={<Eventos />} />
                         <Route path='Area' element={<Area />} />
                         <Route path='Hora' element={<Hora />} />
+                        <Route path='Receta' element={<Receta />} />
+                        <Route path='Detalle' element={<Detalle />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

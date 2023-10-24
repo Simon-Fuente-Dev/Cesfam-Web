@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { useAuth } from '../layout/AuthContext';
 import Alert from 'react-bootstrap/Alert';
+import Swal from "sweetalert2";
 
 const Eventos = () => {
   const { eventoId } = useParams();
@@ -84,7 +85,7 @@ const Eventos = () => {
   };
 
   return (
-    <event-section>
+    <section>
       <event-info>
         {showAlert && (
           <Alert variant="danger">
@@ -118,7 +119,7 @@ const Eventos = () => {
           </>
         )}
       </event-info>
-    </event-section>
+    </section>
   );
 }
 
